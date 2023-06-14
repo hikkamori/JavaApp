@@ -16,6 +16,7 @@ import javafx.scene.text.Text;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
+import java.util.Objects;
 
 public class RegisterInputDataController {
     @FXML
@@ -63,7 +64,7 @@ public class RegisterInputDataController {
                 CommandData data = CommandData.createData().Name(userinfo).Username(email.getText()).Password(codedPassword);
                 Sender.send(data);
                 String[] messages = Reciever.getData(UserData.getSoc());
-                System.out.println(messages[0]);
+                showInvalidCredsText(messages[0], errorText);
             } catch (Exception e){
                 e.printStackTrace();
             }
@@ -88,10 +89,25 @@ public class RegisterInputDataController {
             errorText.setText("Oh, it seems you forgot to enter your email(");
             errorText.setStyle("visibility: true;");
             email.setStyle("-fx-background-color: #c4c2df; -fx-border-color: #1a05d1");
-        } else {
+        } else{
             errorText.setText("Oh, it seems you forgot to enter your password(");
             errorText.setStyle("visibility: true;");
             password.setStyle("-fx-background-color: #c4c2df; -fx-border-color: #1a05d1");
+        }
+    }
+
+    public void showInvalidCredsText(String serverAns, Text errorText){
+
+        if(Objects.equals(serverAns, "error")){
+            errorText.setText("You already have a profile! Use logging in.");
+            errorText.setStyle("visibility: true;");
+        }
+        else if (Objects.equals(serverAns, "invalidPass")){
+            errorText.setText("Your password is invalid.");
+            errorText.setStyle("visibility: true;");
+        }else if (Objects.equals(serverAns, "invalidEmail")){
+            errorText.setText("Your Email is invalid.");
+            errorText.setStyle("visibility: true;");
         }
 
     }
