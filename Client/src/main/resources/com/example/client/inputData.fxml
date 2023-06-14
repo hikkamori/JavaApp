@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.client.Controllers.RegisterInputDataController">
+    <children>
+        <ImageView fitHeight="1000.0" fitWidth="1500.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER">
+            <image>
+                <Image url="@img/5929791.jpg" />
+            </image>
+        </ImageView>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="600.0" stroke="#120084" strokeType="INSIDE" width="450.0" StackPane.alignment="CENTER" />
+        <VBox alignment="CENTER" prefHeight="750.0" prefWidth="1200.0" StackPane.alignment="CENTER">
+            <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="16.0" layoutX="510.0" layoutY="273.0" stroke="TRANSPARENT" strokeType="INSIDE" width="200.0" />
+                <Text fill="#1a05d1" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your email, please" textAlignment="CENTER" textOrigin="CENTER">
+                    <font>
+                        <Font name="Malgun Gothic Bold" size="36.0" />
+                    </font>
+                </Text>
+            <TextField fx:id="email" maxHeight="46.0" maxWidth="352.0" minHeight="46.0" minWidth="352.0" onMouseClicked="#makeEmailWhite" prefHeight="46.0" prefWidth="352.0" style="-fx-border-color: #1a05d1;">
+               <font>
+                  <Font size="24.0" />
+               </font></TextField>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="35.0" stroke="TRANSPARENT" strokeType="INSIDE" width="200.0" />
+            <Text fill="#1a05d1" layoutX="403.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="and password" textAlignment="CENTER" textOrigin="CENTER">
+               <font>
+                  <Font name="Malgun Gothic Bold" size="36.0" />
+               </font>
+            </Text>
+            <PasswordField fx:id="password" maxHeight="46.0" maxWidth="352.0" minHeight="46.0" minWidth="352.0" onMouseClicked="#makePasswordWhite" prefHeight="46.0" prefWidth="352.0" style="-fx-border-color: #1a05d1;">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin></PasswordField>
+            <Text fx:id="errorText" fill="#c40e9c" layoutX="490.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" style="visibility: false;" text="You've forgot to enter yor password" textAlignment="CENTER" textOrigin="CENTER">
+               <font>
+                  <Font name="Malgun Gothic Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" top="70.0" />
+               </VBox.margin>
+            </Text>
+            <Button fx:id="confirmButton" contentDisplay="CENTER" maxHeight="100.0" maxWidth="197.0" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#confirmData" prefHeight="100.0" prefWidth="197.0" style="-fx-background-color: #c40e9c;" text="Confirm!" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Malgun Gothic Bold" size="24.0" />
+               </font>
+            </Button>
+            </children>
+        </VBox>
+      <ImageView fx:id="errorCat" fitHeight="90.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" rotate="180.0" style="visibility: false;">
+         <image>
+            <Image url="@img/pinkCat.png" />
+         </image>
+         <StackPane.margin>
+            <Insets bottom="508.0" />
+         </StackPane.margin>
+      </ImageView>
+    </children>
+</StackPane>

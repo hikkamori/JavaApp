@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.client.Controllers.StartController">
+    <children>
+        <ImageView fitHeight="1000.0" fitWidth="1500.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER">
+            <image>
+                <Image url="@img/5929791.jpg" />
+            </image>
+        </ImageView>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="600.0" stroke="#120084" strokeType="INSIDE" width="450.0" StackPane.alignment="CENTER" />
+      <ImageView fx:id="pantherAuthorize" fitHeight="90.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" style="visibility: false;" StackPane.alignment="CENTER">
+         <image>
+            <Image url="@img/pantherLiying.png" />
+         </image>
+         <StackPane.margin>
+            <Insets bottom="290.0" left="45.0" />
+         </StackPane.margin>
+      </ImageView>
+        <VBox alignment="CENTER" prefHeight="750.0" prefWidth="1200.0" StackPane.alignment="CENTER">
+            <children>
+                <Text fill="#1a05d1" strokeType="OUTSIDE" strokeWidth="0.0" text="HI, Sweetie!" textAlignment="CENTER" textOrigin="CENTER">
+                    <font>
+                        <Font name="Malgun Gothic Bold" size="64.0" />
+                    </font>
+                </Text>
+                <Text fill="#1a05d1" strokeType="OUTSIDE" strokeWidth="0.0" text="What do you want to do?" textAlignment="CENTER">
+                    <font>
+                        <Font name="Malgun Gothic" size="18.0" />
+                    </font>
+                </Text>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="37.0" stroke="WHITE" strokeType="INSIDE" width="200.0" />
+                <Button fx:id="registerButton" alignment="CENTER" contentDisplay="CENTER" maxHeight="70.0" maxWidth="320.0" minHeight="70.0" minWidth="320.0" mnemonicParsing="false" onAction="#toRegister" onMouseEntered="#makeRegisterButtonBlue" onMouseExited="#makeRegisterButtonPink" prefHeight="70.0" prefWidth="320.0" style="-fx-background-color: #c40e9c;" text="register" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+                    <font>
+                        <Font name="Malgun Gothic Bold" size="36.0" />
+                    </font>
+                </Button>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="29.0" stroke="#ffffff00" strokeType="INSIDE" width="200.0" />
+                <Button fx:id="authorizeButton" alignment="CENTER" contentDisplay="CENTER" maxHeight="70.0" maxWidth="320.0" minHeight="70.0" minWidth="320.0" mnemonicParsing="false" onAction="#toAuthorize" onMouseEntered="#makeAuthorizeButtonBlue" onMouseExited="#makeAuthorizeButtonPink" prefHeight="70.0" prefWidth="320.0" style="-fx-background-color: #c40e9c;" text="authorize" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font name="Malgun Gothic Bold" size="36.0" />
+                    </font>
+                </Button>
+            </children>
+        </VBox>
+      <ImageView fx:id="pantherRegister" fitHeight="120.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" style="visibility: false;" StackPane.alignment="CENTER">
+         <image>
+            <Image url="@img/pantherThumbsUp.png" />
+         </image>
+         <StackPane.margin>
+            <Insets right="340.0" top="470.0" />
+         </StackPane.margin>
+      </ImageView>
+    </children>
+</StackPane>
