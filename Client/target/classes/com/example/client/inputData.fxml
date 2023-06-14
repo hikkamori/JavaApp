@@ -60,5 +60,11 @@
             <Insets bottom="508.0" />
          </StackPane.margin>
       </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="2000.0" stroke="BLACK" strokeType="INSIDE" style="visibility: false;" width="2000.0" StackPane.alignment="CENTER" />
+      <ImageView fitHeight="500.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true" style="visibility: false;">
+         <image>
+            <Image url="@img/bun.jpeg" />
+         </image>
+      </ImageView>
     </children>
 </StackPane>
