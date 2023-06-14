@@ -12,6 +12,7 @@ import java.sql.*;
 public class Server {
     public static void main(String[] args) throws IOException, InterruptedException, ExecutionException, SQLException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         final int SERVERPORT = 1256;
+        System.out.println("aboba ya nastroil git");
         int THREADSCOUNT = 5;
         DatagramSocket soc = ClientConnector.startWork(SERVERPORT);
         if (soc != null) {

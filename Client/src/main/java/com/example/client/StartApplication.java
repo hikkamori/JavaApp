@@ -37,6 +37,7 @@ public class StartApplication extends Application {
             UserData.setSoc(soc);
         }
 
+
     public static void main(String[] args) {
         launch();
     }
