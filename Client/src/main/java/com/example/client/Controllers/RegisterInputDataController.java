@@ -97,7 +97,6 @@ public class RegisterInputDataController {
     }
 
     public void showInvalidCredsText(String serverAns, Text errorText){
-
         if(Objects.equals(serverAns, "error")){
             errorText.setText("You already have a profile! Use logging in.");
             errorText.setStyle("visibility: true;");
