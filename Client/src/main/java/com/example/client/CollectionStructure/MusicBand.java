@@ -92,15 +92,15 @@ public class MusicBand {
     }
     public String toString(){
         return
-                "---> " + name + " <---" + "\n" +
-                "ID: " + Long.valueOf(id).toString() + "\n" +
-                "Coordinates: " + coordinates.toString() + "\n" +
-                "Creation date: " + creationDate.toString() + "\n" +
-                "Number of participants: " + Long.valueOf(numberOfParticipants) + "\n" +
-                "Singles count: " + Long.valueOf(singlesCount) + "\n" +
-                "Albums count: " + Long.valueOf(albumsCount) + "\n" +
-                "Genre: " + genre.toString() + "\n" +
-                "Best albom: " + bestAlbum.toString();
+                "["+ name + "," +
+                "ID: " + Long.valueOf(id).toString() + ", " +
+                "Coordinates: " + coordinates.toString() + ", " +
+                "Creation date: " + creationDate.toString() + ", " +
+                "Number of participants: " + Long.valueOf(numberOfParticipants) + ", " +
+                "Singles count: " + Long.valueOf(singlesCount) + ", " +
+                "Albums count: " + Long.valueOf(albumsCount) + ", " +
+                "Genre: " + genre.toString() + ", " +
+                "Best album: " + bestAlbum.toString();
                         
 
     }

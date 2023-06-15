@@ -1,5 +1,6 @@
 package com.example.client;
 
+import com.example.client.ConnectionClasses.CommandData;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -16,6 +17,7 @@ public class StartApplication extends Application {
     public static int CLIENTPORT = 5004;
     public static int SERVERPORT = 1256;
     public void start(Stage stage) throws IOException {
+
         startWork();
         UserData.setStage(stage);
         FXMLLoader fxmlLoader = new FXMLLoader(StartApplication.class.getResource("start.fxml"));

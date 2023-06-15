@@ -19,6 +19,7 @@ import javafx.scene.text.Text;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
+import java.util.Arrays;
 import java.util.Objects;
 
 public class RegisterInputDataController {
@@ -68,6 +69,7 @@ public class RegisterInputDataController {
                     CommandData data = CommandData.createData().Name(userinfo).Username(email.getText()).Password(codedPassword);
                     Sender.send(data);
                     String[] messages = Reciever.getData(UserData.getSoc());
+                    System.out.println(Arrays.toString(messages));
                     showInvalidCredsText(messages[0], errorText);
                     if(messages[0].contains("invalid")){
                         UserData.setAttempts(UserData.getAttempts() + 1);
@@ -76,6 +78,10 @@ public class RegisterInputDataController {
                         }
                     }
                     else{
+                        UserData.setPassword(password.getText());
+                        UserData.setEmail(email.getText());
+                        System.out.println(UserData.showMy());
+                        System.out.println(UserData.showOthers());
                         toManager();
                     }
 

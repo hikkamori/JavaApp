@@ -26,9 +26,9 @@ public class Show extends Command {
         String genre;
         String albumName;
         String albumSales;
-        ArrayList messages = new ArrayList<>();
-        ArrayList messagesMy = new ArrayList();
-        ArrayList messagesOthers = new ArrayList();
+        ArrayList<String> messages = new ArrayList<>();
+        ArrayList<String> messagesMy = new ArrayList<>();
+        ArrayList<String> messagesOthers = new ArrayList<>();
         String query;
         ResultSet rsBands;
         ResultSet rsAlbum;
@@ -48,31 +48,22 @@ public class Show extends Command {
             singlesCount = rsBands.getString(8);
             albumsCount = rsBands.getString(9);
             genre = MusicGenre.getGenreName(rsBands.getString(10));
-            albumName = rsAlbum.getString(1);
-            albumSales = rsAlbum.getString(2);
+            albumName = rsAlbum.getString(2);
+            albumSales = rsAlbum.getString(3);
 
-            ArrayList listToAdd;
+
+
+            ArrayList<String> listToAdd;
             if (username.equals(data.getUserName())){
                 listToAdd = messagesMy;
             } else  {
                 listToAdd = messagesOthers;
             }
-
-            listToAdd.add("------>" + name + "<------"  + "\n"
-                    + "id: " + id  + "\n"
-                    + "coordinates: (" + x + ", " + y + ")\n"
-                    + "creation date: " + date  + "\n"
-                    + "number of participants: " + numberOfParticipants + "\n"
-                    + "singles count: " + singlesCount + "\n"
-                    + "albums count: " + albumsCount + "\n"
-                    + "genre: " + genre  + "\n"
-                    + "best album: " + albumName  + "\n"
-                    + "best album sales: " + albumSales);
-
+        listToAdd.add(id +", " +name +", " +x +", " +y +", " +date  +", " + numberOfParticipants  +", " + singlesCount +", " +albumsCount +", " +genre +", " +albumSales +", " +albumName);
         }
-        messages.add("~~~~~~~~~~~~~~YOUR BANDS~~~~~~~~~~~~~~");
+        messages.add("YOUR BANDS");
         messagesMy.stream().forEach(a -> messages.add(a));
-        messages.add("~~~~~~~~~~~~~~OTHERS BANDS~~~~~~~~~~~~~~");
+        messages.add("OTHERS BANDS");
         messagesOthers.stream().forEach(a -> messages.add(a));
         return messages;
     }
