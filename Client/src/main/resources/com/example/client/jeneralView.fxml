@@ -112,7 +112,7 @@
                      </children></VBox>
                   <HBox alignment="BOTTOM_CENTER" prefHeight="25.0">
                      <children>
-                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="33.0" prefWidth="269.0" style="-fx-border-color: #1a05d1; -fx-border-width: 2; -fx-background-color: #ffffff;" text="&lt;&lt;&lt;" textAlignment="RIGHT" textFill="#1a05d1">
+                        <Button fx:id="leftUp" alignment="CENTER_RIGHT" mnemonicParsing="false" onMouseEntered="#makeLeftUpPink" onMouseExited="#makeLeftUpWhite" prefHeight="33.0" prefWidth="269.0" style="-fx-border-color: #1a05d1; -fx-border-width: 2; -fx-background-color: #ffffff;" text="&lt;&lt;&lt;" textAlignment="RIGHT" textFill="#1a05d1">
                            <font>
                               <Font name="Malgun Gothic Bold" size="14.0" />
                            </font></Button>
@@ -124,13 +124,13 @@
                                  </font>
                               </Text>
                            </children></StackPane>
-                        <Button alignment="TOP_LEFT" layoutX="130.0" layoutY="10.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="269.0" style="-fx-border-color: #1a05d1; -fx-border-width: 2; -fx-background-color: #ffffff;" text="&gt;&gt;&gt;" textFill="#1a05d1">
+                        <Button fx:id="rightUp" alignment="TOP_LEFT" layoutX="130.0" layoutY="10.0" mnemonicParsing="false" onMouseEntered="#makeRightUpPink" onMouseExited="#makeRightUpWhite" prefHeight="33.0" prefWidth="269.0" style="-fx-border-color: #1a05d1; -fx-border-width: 2; -fx-background-color: #ffffff;" text="&gt;&gt;&gt;" textFill="#1a05d1">
                            <font>
                               <Font name="Malgun Gothic Bold" size="14.0" />
                            </font>
                         </Button>
                      </children></HBox>
-                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="315.0" prefWidth="600.0" style="-fx-border-color: #1a05d1;">
+                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="320.0" prefWidth="600.0" style="-fx-border-color: #1a05d1;">
                      <children>
                         <GridPane style="-fx-border-color: #1a05d1; -fx-border-width: 2; -fx-background-color: #d9dfff;">
                            <columnConstraints>
@@ -195,7 +195,7 @@
                   </VBox>
                   <HBox alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="325.0" prefHeight="25.0">
                      <children>
-                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="33.0" prefWidth="269.0" style="-fx-border-color: #1a05d1; -fx-border-width: 2; -fx-background-color: #ffffff;" text="&lt;&lt;&lt;" textAlignment="RIGHT" textFill="#1a05d1">
+                        <Button fx:id="leftDown" alignment="CENTER_RIGHT" mnemonicParsing="false" onMouseEntered="#makeLeftDownPink" onMouseExited="#makeLeftDownWhite" prefHeight="33.0" prefWidth="269.0" style="-fx-border-color: #1a05d1; -fx-border-width: 2; -fx-background-color: #ffffff;" text="&lt;&lt;&lt;" textAlignment="RIGHT" textFill="#1a05d1">
                            <font>
                               <Font name="Malgun Gothic Bold" size="14.0" />
                            </font>
@@ -209,7 +209,7 @@
                               </Text>
                            </children>
                         </StackPane>
-                        <Button alignment="TOP_LEFT" layoutX="130.0" layoutY="10.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="269.0" style="-fx-border-color: #1a05d1; -fx-border-width: 2; -fx-background-color: #ffffff;" text="&gt;&gt;&gt;" textFill="#1a05d1">
+                        <Button fx:id="rightDown" alignment="TOP_LEFT" layoutX="130.0" layoutY="10.0" mnemonicParsing="false" onMouseEntered="#makeRightDownPink" onMouseExited="#makeRightDownWhite" prefHeight="33.0" prefWidth="269.0" style="-fx-border-color: #1a05d1; -fx-border-width: 2; -fx-background-color: #ffffff;" text="&gt;&gt;&gt;" textFill="#1a05d1">
                            <font>
                               <Font name="Malgun Gothic Bold" size="14.0" />
                            </font>
