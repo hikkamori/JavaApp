@@ -1,17 +1,170 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.client.Controllers.JeneralController">
    <children>
-      <ImageView fitHeight="1000.0" fitWidth="1500.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER">
+      <ImageView fitHeight="1000.0" fitWidth="1500.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER">
          <image>
             <Image url="@img/5929791.jpg" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="700.0" stroke="WHITE" strokeType="INSIDE" width="1100.0" StackPane.alignment="CENTER" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="700.0" stroke="WHITE" strokeType="INSIDE" width="1000.0" StackPane.alignment="CENTER">
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin></Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffa8" height="350.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="5.0" width="50.0">
+         <StackPane.margin>
+            <Insets bottom="350.0" right="1047.0" />
+         </StackPane.margin>
+      </Rectangle>
+      <Text fill="WHITE" rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your bands" textAlignment="CENTER" StackPane.alignment="CENTER">
+         <StackPane.margin>
+            <Insets bottom="350.0" right="1050.0" />
+         </StackPane.margin>
+         <font>
+            <Font name="Malgun Gothic Bold" size="48.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffa8" height="350.0" layoutX="61.0" layoutY="35.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="5.0" width="50.0" StackPane.alignment="CENTER">
+         <StackPane.margin>
+            <Insets right="1047.0" top="348.0" />
+         </StackPane.margin>
+      </Rectangle>
+      <Text fill="WHITE" layoutX="-46.0" layoutY="230.0" rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Other's bands" textAlignment="CENTER">
+         <font>
+            <Font name="Malgun Gothic Bold" size="48.0" />
+         </font>
+         <StackPane.margin>
+            <Insets right="1050.0" top="350.0" />
+         </StackPane.margin>
+      </Text>
+      <HBox prefHeight="700.0" prefWidth="1000.0" StackPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="700.0" prefWidth="600.0">
+               <children>
+                  <VBox prefHeight="350.0" prefWidth="600.0" style="-fx-border-color: #1a05d1;">
+                     <children>
+                        <GridPane style="-fx-border-color: #1a05d1; -fx-border-width: 2; -fx-background-color: #d9dfff;">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="207.39998474121094" minWidth="10.0" prefWidth="207.39998474121094" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.4" minWidth="10.0" prefWidth="123.40001525878907" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="255.0" minWidth="10.0" prefWidth="115.19999999999999" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.99999999999994" minWidth="10.0" prefWidth="77.59999999999997" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="121.99999999999994" minWidth="10.0" prefWidth="74.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Text fill="#1a05d1" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                                 <font>
+                                    <Font name="Malgun Gothic Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#1a05d1" layoutX="35.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                                 <font>
+                                    <Font name="Malgun Gothic Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#1a05d1" layoutX="134.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Creation" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                                 <font>
+                                    <Font name="Malgun Gothic Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#1a05d1" layoutX="10.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Singles" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                                 <font>
+                                    <Font name="Malgun Gothic Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#1a05d1" layoutX="10.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Albums" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                                 <font>
+                                    <Font name="Malgun Gothic Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </GridPane>
+                        <GridPane layoutX="10.0" layoutY="10.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="207.39998474121094" minWidth="10.0" prefWidth="207.39998474121094" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.4" minWidth="10.0" prefWidth="123.40001525878907" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="255.0" minWidth="10.0" prefWidth="115.19999999999999" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.99999999999994" minWidth="10.0" prefWidth="77.59999999999997" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="121.99999999999994" minWidth="10.0" prefWidth="74.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children></VBox>
+                  <VBox prefHeight="350.0" prefWidth="600.0" scaleShape="false" />
+               </children></VBox>
+         </children>
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+         <padding>
+            <Insets bottom="25.0" left="100.0" right="100.0" top="25.0" />
+         </padding>
+      </HBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffa8" height="235.0" onMouseEntered="#makeSettingsBlue" onMouseExited="#makeSettingsWhite" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="5.0" width="50.0">
+         <StackPane.margin>
+            <Insets left="1047.0" top="465.0" />
+         </StackPane.margin>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffa8" height="275.0" onMouseEntered="#makeAddBlue" onMouseExited="#makeAddWhite" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="5.0" width="50.0">
+         <StackPane.margin>
+            <Insets bottom="425.0" left="1047.0" />
+         </StackPane.margin>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffa8" height="200.0" onMouseEntered="#makeUpdateBlue" onMouseExited="#makeUpdateWhite" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="5.0" width="50.0">
+         <StackPane.margin>
+            <Insets left="1047.0" top="45.0" />
+         </StackPane.margin>
+      </Rectangle>
+      <Text fx:id="add" fill="WHITE" layoutX="-46.0" layoutY="230.0" onMouseEntered="#makeAddBlue" onMouseExited="#makeAddWhite" rotate="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add band" textAlignment="CENTER">
+         <font>
+            <Font name="Malgun Gothic Bold" size="40.0" />
+         </font>
+         <StackPane.margin>
+            <Insets bottom="415.0" left="1045.0" />
+         </StackPane.margin>
+      </Text>
+      <Text fx:id="update" fill="WHITE" layoutX="480.0" layoutY="405.0" onMouseEntered="#makeUpdateBlue" onMouseExited="#makeUpdateWhite" rotate="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update" textAlignment="CENTER">
+         <font>
+            <Font name="Malgun Gothic Bold" size="40.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="1045.0" top="35.0" />
+         </StackPane.margin>
+      </Text>
+      <Text fx:id="settings" fill="WHITE" layoutX="480.0" layoutY="405.0" onMouseEntered="#makeSettingsBlue" onMouseExited="#makeSettingsWhite" rotate="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings" textAlignment="CENTER">
+         <font>
+            <Font name="Malgun Gothic Bold" size="40.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="1045.0" top="460.0" />
+         </StackPane.margin>
+      </Text>
+      <Button mnemonicParsing="false" onMouseEntered="#makeAddBlue" onMouseExited="#makeAddWhite" prefHeight="275.0" prefWidth="50.0" style="visibility: false;" text="Add">
+         <StackPane.margin>
+            <Insets bottom="425.0" left="1047.0" />
+         </StackPane.margin>
+      </Button>
+      <Button layoutX="1108.0" layoutY="35.0" mnemonicParsing="false" onMouseEntered="#makeSettingsBlue" onMouseExited="#makeSettingsWhite" prefHeight="235.0" prefWidth="50.0" style="visibility: false;" text="Settings">
+         <StackPane.margin>
+            <Insets left="1047.0" top="465.0" />
+         </StackPane.margin>
+      </Button>
+      <Button layoutX="1108.0" layoutY="500.0" mnemonicParsing="false" onMouseEntered="#makeUpdateBlue" onMouseExited="#makeUpdateWhite" prefHeight="200.0" prefWidth="50.0" style="visibility: false;" text="Update">
+         <StackPane.margin>
+            <Insets left="1047.0" top="45.0" />
+         </StackPane.margin>
+      </Button>
    </children>
 </StackPane>
