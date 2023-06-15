@@ -103,27 +103,27 @@ public class JeneralController {
         ArrayList<MusicBand> yourCollection = UserData.showMy();//get collections
         if (yourCollection.isEmpty()){
             Text text = new Text("Your collection is empty(. Click on 'Add band'");
-            upStackPane = new StackPane();
+            upStackPane.getChildren().clear();
             upStackPane.getChildren().add(text);
         } else {
             ArrayList<GridPane> yourSheets = MakeFilledSheets(yourCollection);//generate sheets for table
             yourSheets.stream().forEach(x -> x.setStyle("visibility: false;"));//make sheets invisible
             yourSheets.get(0).setStyle("visibility: false;");//make first sheet visible
             currentSheetNumYour = 1;
-            upStackPane = new StackPane();
+            upStackPane.getChildren().clear();
             upStackPane.getChildren().addAll(yourSheets);
         }
         ArrayList<MusicBand> othersCollection = UserData.showOthers();
         if (othersCollection.isEmpty()){
             Text text = new Text("Others collections is empty(");
-            downStackPane = new StackPane();
+            downStackPane.getChildren().clear();
             downStackPane.getChildren().add(text);
         } else {
             ArrayList<GridPane> othersSheets = MakeFilledSheets(othersCollection);
             othersSheets.stream().forEach(x -> x.setStyle("visibility: false;"));
             othersSheets.get(0).setStyle("visibility: false;");
             currentSheetNumOthers = 1;
-            downStackPane = new StackPane();
+            downStackPane.getChildren().clear();
             downStackPane.getChildren().addAll(othersSheets);
         }
 
