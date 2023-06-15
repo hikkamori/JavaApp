@@ -20,7 +20,7 @@ public class StartApplication extends Application {
 
         startWork();
         UserData.setStage(stage);
-        FXMLLoader fxmlLoader = new FXMLLoader(StartApplication.class.getResource("start.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(StartApplication.class.getResource("jeneralView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1200, 750);
         stage.setTitle("Music Band Manager");
         stage.setScene(scene);
