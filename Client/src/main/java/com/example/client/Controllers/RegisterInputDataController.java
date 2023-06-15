@@ -49,28 +49,34 @@ public class RegisterInputDataController {
             showErrorText(emailIsEmpty, passwordIsEmpty, errorCat, errorText, email, password);
         } else {
 
-            try {
-                String userinfo;
-                if(UserData.getIsAuthorizing()){
-                    userinfo = "CheckUser";
-                }
-                else{
-                    userinfo = "CreateUser";
-                }
-                MessageDigest digest = MessageDigest.getInstance("SHA-1");
-                digest.reset();
-                digest.update(password.getText().getBytes("utf8"));
-                String codedPassword = String.format("%040x", new BigInteger(1, digest.digest()));
-                CommandData data = CommandData.createData().Name(userinfo).Username(email.getText()).Password(codedPassword);
-                Sender.send(data);
-                String[] messages = Reciever.getData(UserData.getSoc());
-                showInvalidCredsText(messages[0], errorText);
-            } catch (Exception e){
-                e.printStackTrace();
+                try {
+                    String userinfo;
+                    if (UserData.getIsAuthorizing()) {
+                        userinfo = "CheckUser";
+                    } else {
+                        userinfo = "CreateUser";
+                    }
+                    MessageDigest digest = MessageDigest.getInstance("SHA-1");
+                    digest.reset();
+                    digest.update(password.getText().getBytes("utf8"));
+                    String codedPassword = String.format("%040x", new BigInteger(1, digest.digest()));
+                    CommandData data = CommandData.createData().Name(userinfo).Username(email.getText()).Password(codedPassword);
+                    Sender.send(data);
+                    String[] messages = Reciever.getData(UserData.getSoc());
+                    showInvalidCredsText(messages[0], errorText);
+                    if(messages[0].contains("invalid")){
+                        UserData.setAttempts(UserData.getAttempts() + 1);
+                        if(UserData.getAttempts() == 3){
+                            showBan(bunImg);
+                        }
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }}
+
             }
 
-        }
-    }
     public void makeEmailWhite(){
         email.setStyle("-fx-background-color: #ffffff");
         email.setStyle("-fx-border-color: #1a05d1");
@@ -78,6 +84,11 @@ public class RegisterInputDataController {
     public void makePasswordWhite(){
         password.setStyle("-fx-background-color: #ffffff");
         password.setStyle("-fx-border-color: #1a05d1");
+    }
+
+    public void showBan(ImageView bunImg){
+        blackRectangle.setStyle("visibility:true;");
+        bunImg.setStyle("visibility: true;");
     }
 
     public void showErrorText(boolean emailIsEmpty, boolean passwordIsEmpty, ImageView errorCat, Text errorText, TextField email, PasswordField password){
