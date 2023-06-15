@@ -2,6 +2,8 @@ package com.example.client.Controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
 public class JeneralController {
@@ -19,6 +21,12 @@ public class JeneralController {
     private Button rightDown;
     @FXML
     private Button leftDown;
+    @FXML
+    private ImageView helpPanthera;
+    @FXML
+    private Text helpText;
+    @FXML
+    private Rectangle helpRectangle;
     public void makeAddBlue(){
         add.setStyle("-fx-fill: #1a05d1;");
     }
@@ -60,5 +68,13 @@ public class JeneralController {
     }
     public void makeRightDownWhite(){
         rightDown.setStyle("-fx-border-color: #1a05d1; -fx-border-width: 2; -fx-background-color: #ffffff;");
+    }
+    public void showHelp(){
+        helpRectangle.setStyle("visibility: true;");
+        helpText.setStyle("visibility: true;");
+    }
+    public void closeHelp(){
+        helpRectangle.setStyle("visibility: false;");
+        helpText.setStyle("visibility: false;");
     }
 }

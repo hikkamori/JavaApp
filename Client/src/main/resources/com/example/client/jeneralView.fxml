@@ -217,6 +217,30 @@
                      </children>
                   </HBox>
                </children></VBox>
+            <StackPane prefHeight="700.0" prefWidth="400.0">
+               <children>
+                  <Rectangle fx:id="helpRectangle" arcHeight="5.0" arcWidth="5.0" fill="#eab8df" height="50.0" stroke="#c40e9c" strokeType="INSIDE" strokeWidth="2.0" style="visibility: false;" width="375.0">
+                     <StackPane.margin>
+                        <Insets bottom="640.0" left="20.0" />
+                     </StackPane.margin>
+                  </Rectangle>
+                  <Text fx:id="helpText" fill="#c40e9c" strokeType="OUTSIDE" strokeWidth="0.0" style="visibility: false;" text="Tap on the band parameter, to edit it" textAlignment="CENTER">
+                     <font>
+                        <Font name="Malgun Gothic" size="18.0" />
+                     </font>
+                     <StackPane.margin>
+                        <Insets bottom="645.0" right="25.0" />
+                     </StackPane.margin>
+                  </Text>
+                  <ImageView fx:id="helpPanthera" fitHeight="40.0" fitWidth="65.0" onMouseEntered="#showHelp" onMouseExited="#closeHelp" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER">
+                     <image>
+                        <Image url="@img/helpPanther.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets bottom="640.0" left="350.0" />
+                     </StackPane.margin></ImageView>
+               </children>
+            </StackPane>
          </children>
          <StackPane.margin>
             <Insets />

@@ -16,7 +16,7 @@ public class StartApplication extends Application {
     public static int CLIENTPORT = 5007;
     public static int SERVERPORT = 1257;
     public void start(Stage stage) throws IOException {
-        //startWork();
+        startWork();
         UserData.setStage(stage);
         FXMLLoader fxmlLoader = new FXMLLoader(StartApplication.class.getResource("start.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1200, 750);
