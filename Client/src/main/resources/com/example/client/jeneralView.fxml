@@ -112,7 +112,7 @@
                      </children></VBox>
                   <HBox alignment="BOTTOM_CENTER" prefHeight="25.0">
                      <children>
-                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="33.0" prefWidth="269.0" style="-fx-border-color: #1a05d1; -fx-border-width: 2; -fx-background-color: #ffffff;" text="&lt;&lt;&lt;" textAlignment="RIGHT" textFill="#1a05d1">
+                        <Button fx:id="leftUp" alignment="CENTER_RIGHT" mnemonicParsing="false" onMouseEntered="#makeLeftUpPink" onMouseExited="#makeLeftUpWhite" prefHeight="33.0" prefWidth="269.0" style="-fx-border-color: #1a05d1; -fx-border-width: 2; -fx-background-color: #ffffff;" text="&lt;&lt;&lt;" textAlignment="RIGHT" textFill="#1a05d1">
                            <font>
                               <Font name="Malgun Gothic Bold" size="14.0" />
                            </font></Button>
@@ -124,13 +124,13 @@
                                  </font>
                               </Text>
                            </children></StackPane>
-                        <Button alignment="TOP_LEFT" layoutX="130.0" layoutY="10.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="269.0" style="-fx-border-color: #1a05d1; -fx-border-width: 2; -fx-background-color: #ffffff;" text="&gt;&gt;&gt;" textFill="#1a05d1">
+                        <Button fx:id="rightUp" alignment="TOP_LEFT" layoutX="130.0" layoutY="10.0" mnemonicParsing="false" onMouseEntered="#makeRightUpPink" onMouseExited="#makeRightUpWhite" prefHeight="33.0" prefWidth="269.0" style="-fx-border-color: #1a05d1; -fx-border-width: 2; -fx-background-color: #ffffff;" text="&gt;&gt;&gt;" textFill="#1a05d1">
                            <font>
                               <Font name="Malgun Gothic Bold" size="14.0" />
                            </font>
                         </Button>
                      </children></HBox>
-                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="315.0" prefWidth="600.0" style="-fx-border-color: #1a05d1;">
+                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="320.0" prefWidth="600.0" style="-fx-border-color: #1a05d1;">
                      <children>
                         <GridPane style="-fx-border-color: #1a05d1; -fx-border-width: 2; -fx-background-color: #d9dfff;">
                            <columnConstraints>
@@ -195,7 +195,7 @@
                   </VBox>
                   <HBox alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="325.0" prefHeight="25.0">
                      <children>
-                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="33.0" prefWidth="269.0" style="-fx-border-color: #1a05d1; -fx-border-width: 2; -fx-background-color: #ffffff;" text="&lt;&lt;&lt;" textAlignment="RIGHT" textFill="#1a05d1">
+                        <Button fx:id="leftDown" alignment="CENTER_RIGHT" mnemonicParsing="false" onMouseEntered="#makeLeftDownPink" onMouseExited="#makeLeftDownWhite" prefHeight="33.0" prefWidth="269.0" style="-fx-border-color: #1a05d1; -fx-border-width: 2; -fx-background-color: #ffffff;" text="&lt;&lt;&lt;" textAlignment="RIGHT" textFill="#1a05d1">
                            <font>
                               <Font name="Malgun Gothic Bold" size="14.0" />
                            </font>
@@ -209,7 +209,7 @@
                               </Text>
                            </children>
                         </StackPane>
-                        <Button alignment="TOP_LEFT" layoutX="130.0" layoutY="10.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="269.0" style="-fx-border-color: #1a05d1; -fx-border-width: 2; -fx-background-color: #ffffff;" text="&gt;&gt;&gt;" textFill="#1a05d1">
+                        <Button fx:id="rightDown" alignment="TOP_LEFT" layoutX="130.0" layoutY="10.0" mnemonicParsing="false" onMouseEntered="#makeRightDownPink" onMouseExited="#makeRightDownWhite" prefHeight="33.0" prefWidth="269.0" style="-fx-border-color: #1a05d1; -fx-border-width: 2; -fx-background-color: #ffffff;" text="&gt;&gt;&gt;" textFill="#1a05d1">
                            <font>
                               <Font name="Malgun Gothic Bold" size="14.0" />
                            </font>
@@ -217,6 +217,30 @@
                      </children>
                   </HBox>
                </children></VBox>
+            <StackPane prefHeight="700.0" prefWidth="400.0">
+               <children>
+                  <Rectangle fx:id="helpRectangle" arcHeight="5.0" arcWidth="5.0" fill="#eab8df" height="50.0" stroke="#c40e9c" strokeType="INSIDE" strokeWidth="2.0" style="visibility: false;" width="375.0">
+                     <StackPane.margin>
+                        <Insets bottom="640.0" left="20.0" />
+                     </StackPane.margin>
+                  </Rectangle>
+                  <Text fx:id="helpText" fill="#c40e9c" strokeType="OUTSIDE" strokeWidth="0.0" style="visibility: false;" text="Tap on the band parameter, to edit it" textAlignment="CENTER">
+                     <font>
+                        <Font name="Malgun Gothic" size="18.0" />
+                     </font>
+                     <StackPane.margin>
+                        <Insets bottom="645.0" right="25.0" />
+                     </StackPane.margin>
+                  </Text>
+                  <ImageView fx:id="helpPanthera" fitHeight="40.0" fitWidth="65.0" onMouseEntered="#showHelp" onMouseExited="#closeHelp" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER">
+                     <image>
+                        <Image url="@img/helpPanther.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets bottom="640.0" left="350.0" />
+                     </StackPane.margin></ImageView>
+               </children>
+            </StackPane>
          </children>
          <StackPane.margin>
             <Insets />

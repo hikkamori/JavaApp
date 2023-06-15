@@ -14,8 +14,8 @@ import java.net.UnknownHostException;
 
 public class StartApplication extends Application {
 
-    public static int CLIENTPORT = 5004;
-    public static int SERVERPORT = 1256;
+    public static int CLIENTPORT = 5007;
+    public static int SERVERPORT = 1257;
     public void start(Stage stage) throws IOException {
 
         startWork();
