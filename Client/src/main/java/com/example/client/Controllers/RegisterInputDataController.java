@@ -3,8 +3,11 @@ package com.example.client.Controllers;
 import com.example.client.ConnectionClasses.CommandData;
 import com.example.client.ConnectionClasses.Reciever;
 import com.example.client.ConnectionClasses.Sender;
+import com.example.client.StartApplication;
 import com.example.client.UserData;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
@@ -34,6 +37,8 @@ public class RegisterInputDataController {
     @FXML
     private Rectangle blackRectangle;
 
+    FXMLLoader fxmlLoader = new FXMLLoader(StartApplication.class.getResource("jeneralView.fxml"));
+    Scene scene = new Scene(fxmlLoader.load(), 1200, 750);
 
 
 
@@ -49,28 +54,45 @@ public class RegisterInputDataController {
             showErrorText(emailIsEmpty, passwordIsEmpty, errorCat, errorText, email, password);
         } else {
 
-            try {
-                String userinfo;
-                if(UserData.getIsAuthorizing()){
-                    userinfo = "CheckUser";
-                }
-                else{
-                    userinfo = "CreateUser";
-                }
-                MessageDigest digest = MessageDigest.getInstance("SHA-1");
-                digest.reset();
-                digest.update(password.getText().getBytes("utf8"));
-                String codedPassword = String.format("%040x", new BigInteger(1, digest.digest()));
-                CommandData data = CommandData.createData().Name(userinfo).Username(email.getText()).Password(codedPassword);
-                Sender.send(data);
-                String[] messages = Reciever.getData(UserData.getSoc());
-                showInvalidCredsText(messages[0], errorText);
-            } catch (Exception e){
-                e.printStackTrace();
+                try {
+                    String userinfo;
+                    if (UserData.getIsAuthorizing()) {
+                        userinfo = "CheckUser";
+                    } else {
+                        userinfo = "CreateUser";
+                    }
+                    MessageDigest digest = MessageDigest.getInstance("SHA-1");
+                    digest.reset();
+                    digest.update(password.getText().getBytes("utf8"));
+                    String codedPassword = String.format("%040x", new BigInteger(1, digest.digest()));
+                    CommandData data = CommandData.createData().Name(userinfo).Username(email.getText()).Password(codedPassword);
+                    Sender.send(data);
+                    String[] messages = Reciever.getData(UserData.getSoc());
+                    showInvalidCredsText(messages[0], errorText);
+                    if(messages[0].contains("invalid")){
+                        UserData.setAttempts(UserData.getAttempts() + 1);
+                        if(UserData.getAttempts() == 3){
+                            showBan(bunImg);
+                        }
+                    }
+                    else{
+                        toManager();
+                    }
+
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }}
+
             }
 
-        }
+    @FXML
+    protected void toManager() {
+        UserData.getStage().setTitle("Collection Managing by Vozzh and sorokka");
+        UserData.getStage().setScene(scene);
+        UserData.getStage().show();
     }
+
     public void makeEmailWhite(){
         email.setStyle("-fx-background-color: #ffffff");
         email.setStyle("-fx-border-color: #1a05d1");
@@ -78,6 +100,11 @@ public class RegisterInputDataController {
     public void makePasswordWhite(){
         password.setStyle("-fx-background-color: #ffffff");
         password.setStyle("-fx-border-color: #1a05d1");
+    }
+
+    public void showBan(ImageView bunImg){
+        blackRectangle.setStyle("visibility:true;");
+        bunImg.setStyle("visibility: true;");
     }
 
     public void showErrorText(boolean emailIsEmpty, boolean passwordIsEmpty, ImageView errorCat, Text errorText, TextField email, PasswordField password){

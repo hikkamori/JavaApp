@@ -5,11 +5,20 @@ import javafx.stage.Stage;
 import java.net.DatagramSocket;
 
 public class UserData {
+    private static int attempts = 0;
     private static Stage stage;
     private static Boolean isAuthorizing;
     private static String email;
     private static String password;
     private static DatagramSocket soc;
+
+    public static void setAttempts(int attempts) {
+        UserData.attempts = attempts;
+    }
+
+    public static int getAttempts() {
+        return attempts;
+    }
 
     public static void setSoc(DatagramSocket soc) {
         UserData.soc = soc;
@@ -34,6 +43,7 @@ public class UserData {
     public static void setPassword(String password) {
         UserData.password = password;
     }
+
 
     public static Stage getStage() {
         return stage;
