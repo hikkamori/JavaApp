@@ -3,8 +3,11 @@ package com.example.client.Controllers;
 import com.example.client.ConnectionClasses.CommandData;
 import com.example.client.ConnectionClasses.Reciever;
 import com.example.client.ConnectionClasses.Sender;
+import com.example.client.StartApplication;
 import com.example.client.UserData;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
@@ -34,6 +37,8 @@ public class RegisterInputDataController {
     @FXML
     private Rectangle blackRectangle;
 
+    FXMLLoader fxmlLoader = new FXMLLoader(StartApplication.class.getResource("jeneralView.fxml"));
+    Scene scene = new Scene(fxmlLoader.load(), 1200, 750);
 
 
 
@@ -70,12 +75,23 @@ public class RegisterInputDataController {
                             showBan(bunImg);
                         }
                     }
+                    else{
+                        toManager();
+                    }
+
 
                 } catch (Exception e) {
                     e.printStackTrace();
                 }}
 
             }
+
+    @FXML
+    protected void toManager() {
+        UserData.getStage().setTitle("Collection Managing by Vozzh and sorokka");
+        UserData.getStage().setScene(scene);
+        UserData.getStage().show();
+    }
 
     public void makeEmailWhite(){
         email.setStyle("-fx-background-color: #ffffff");
