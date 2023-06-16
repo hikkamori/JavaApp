@@ -6,6 +6,7 @@ module com.example.client {
     requires com.fasterxml.jackson.annotation;
     requires com.fasterxml.jackson.datatype.jsr310;
     requires com.fasterxml.jackson.dataformat.yaml;
+    requires java.sql;
 
 
     opens com.example.client to javafx.fxml;
