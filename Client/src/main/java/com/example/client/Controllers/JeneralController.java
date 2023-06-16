@@ -155,10 +155,15 @@ public class JeneralController {
                 panes.add(currentGrid);
             }
             name = new Text(collection.get(i).getName());
+            name.setStyle("-fx-fill: #1a05d1 ");
             genre = new Text(collection.get(i).getGenre().toString());
+            genre.setStyle("-fx-fill: #1a05d1 ");
             creation = new Text(collection.get(i).getCreationDate().toString());
+            creation.setStyle("-fx-fill: #1a05d1 ");
             singlesCount = new Text(String.valueOf(collection.get(i).getSinglesCount()));
+            singlesCount.setStyle("-fx-fill: #1a05d1 ");
             albumsCount = new Text(String.valueOf(collection.get(i).getAlbumsCount()));
+            albumsCount.setStyle("-fx-fill: #1a05d1 ");
             currentGrid.addRow(i%8, name, genre, creation, singlesCount, albumsCount);
         }
         return panes;
