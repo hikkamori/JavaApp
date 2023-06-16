@@ -211,7 +211,7 @@
             <Insets bottom="25.0" left="100.0" right="100.0" top="25.0" />
          </padding>
       </HBox>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffa8" height="235.0" onMouseEntered="#makeSettingsBlue" onMouseExited="#makeSettingsWhite" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="5.0" width="50.0">
+      <Rectangle fx:id="showSettings" arcHeight="5.0" arcWidth="5.0" fill="#ffffffa8" height="235.0" onMouseClicked="#showSettings" onMouseEntered="#makeSettingsBlue" onMouseExited="#makeSettingsWhite" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="5.0" width="50.0">
          <StackPane.margin>
             <Insets left="1047.0" top="465.0" />
          </StackPane.margin>
@@ -242,7 +242,7 @@
             <Insets left="1045.0" top="35.0" />
          </StackPane.margin>
       </Text>
-      <Text fx:id="settings" fill="WHITE" layoutX="480.0" layoutY="405.0" onMouseEntered="#makeSettingsBlue" onMouseExited="#makeSettingsWhite" rotate="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings" textAlignment="CENTER">
+      <Text fx:id="settings" fill="WHITE" layoutX="480.0" layoutY="405.0" onMouseClicked="#showSettings" onMouseEntered="#makeSettingsBlue" onMouseExited="#makeSettingsWhite" rotate="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings" textAlignment="CENTER">
          <font>
             <Font name="Malgun Gothic Bold" size="40.0" />
          </font>

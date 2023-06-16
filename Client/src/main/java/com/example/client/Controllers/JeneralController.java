@@ -170,4 +170,11 @@ public class JeneralController {
         tmpStage.setScene(scene);
         tmpStage.show();
     }
+    public void showSettings() throws IOException {
+        Stage stm = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(StartApplication.class.getResource("settingsView.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 400, 600);
+        stm.setScene(scene);
+        stm.show();
+    }
 }
