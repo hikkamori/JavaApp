@@ -3,8 +3,11 @@ package com.example.client.Controllers;
 import com.example.client.CollectionStructure.Coordinates;
 import com.example.client.CollectionStructure.MusicBand;
 import com.example.client.CollectionStructure.MusicGenre;
+import com.example.client.StartApplication;
 import com.example.client.UserData;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.ColumnConstraints;
@@ -12,6 +15,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
@@ -158,5 +162,12 @@ public class JeneralController {
             currentGrid.addRow(i%8, name, genre, creation, singlesCount, albumsCount);
         }
         return panes;
+    }
+    public void addBand() throws IOException {
+        Stage tmpStage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(StartApplication.class.getResource("addView.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 650, 800);
+        tmpStage.setScene(scene);
+        tmpStage.show();
     }
 }

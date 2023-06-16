@@ -1,4 +1,7 @@
 package com.example.client.CollectionStructure;
+
+import java.util.HashMap;
+
 public enum MusicGenre {
     ROCK{
         @Override
@@ -30,4 +33,13 @@ public enum MusicGenre {
             return "Punk rock";
         }
     };
+    public static MusicGenre getGenreName(String name){
+        HashMap<String, MusicGenre> genres = new HashMap<>();
+        genres.put("rock", MusicGenre.ROCK);
+        genres.put("progressive rock", MusicGenre.PROGRESSIVE_ROCK);
+        genres.put("post punk", MusicGenre.POST_PUNK);
+        genres.put("post rock", MusicGenre.POST_ROCK);
+        genres.put("punk rock", MusicGenre.PUNK_ROCK);
+        return genres.get(name);
+    }
 }

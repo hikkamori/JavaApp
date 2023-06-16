@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.client.Controllers.AddController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="1200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER">
+         <image>
+            <Image url="@img/5929791.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="400.0" stroke="#ffffff00" strokeType="INSIDE" width="1000.0">
+         <StackPane.margin>
+            <Insets bottom="1090.0" />
+         </StackPane.margin>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="400.0" layoutX="-165.0" layoutY="-300.0" stroke="#ffffff00" strokeType="INSIDE" width="1000.0">
+         <StackPane.margin>
+            <Insets top="930.0" />
+         </StackPane.margin>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="1200.0" layoutX="-165.0" layoutY="600.0" stroke="#ffffff00" strokeType="INSIDE" width="400.0">
+         <StackPane.margin>
+            <Insets left="1000.0" />
+         </StackPane.margin>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="1200.0" layoutX="635.0" layoutY="-250.0" stroke="#ffffff00" strokeType="INSIDE" width="400.0">
+         <StackPane.margin>
+            <Insets right="1000.0" />
+         </StackPane.margin>
+      </Rectangle>
+      <ImageView fx:id="panthera" fitHeight="150.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true" style="visibility: false;">
+         <image>
+            <Image url="@img/pantherLiying.png" />
+         </image>
+         <StackPane.margin>
+            <Insets top="600.0" />
+         </StackPane.margin>
+      </ImageView>
+      <Button fx:id="confirmButton" mnemonicParsing="false" onAction="#addBand" onMouseEntered="#showPanthera" onMouseExited="#hidePanthera" prefHeight="40.0" prefWidth="300.0" style="-fx-background-color: #ffffff; -fx-border-color: #1a05d1; -fx-border-width: 3;" text="Confirm!" textFill="#1a05d1">
+         <font>
+            <Font name="Malgun Gothic Bold" size="18.0" />
+         </font>
+         <StackPane.margin>
+            <Insets top="690.0" />
+         </StackPane.margin>
+      </Button>
+      <Rectangle fx:id="nameBack" arcHeight="5.0" arcWidth="5.0" fill="#ffffffde" height="70.0" stroke="#ffffff00" strokeType="INSIDE" style="visibility: false;" width="540.0">
+         <StackPane.margin>
+            <Insets bottom="570.0" />
+         </StackPane.margin>
+      </Rectangle>
+      <Text fx:id="nameText" fill="#1a05d1" strokeType="OUTSIDE" strokeWidth="0.0" style="visibility: false;" text="Text" textAlignment="CENTER">
+         <font>
+            <Font name="Malgun Gothic Bold" size="14.0" />
+         </font>
+         <StackPane.margin>
+            <Insets bottom="535.0" />
+         </StackPane.margin></Text>
+      <TextField fx:id="name" maxHeight="40.0" maxWidth="550.0" minHeight="40.0" minWidth="550.0" prefHeight="40.0" prefWidth="550.0" promptText="Name" style="-fx-border-color: #1a05d1; -fx-border-width: 1;">
+         <StackPane.margin>
+            <Insets bottom="600.0" />
+         </StackPane.margin>
+      </TextField>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffde" height="70.0" layoutX="65.0" layoutY="75.0" stroke="#ffffff00" strokeType="INSIDE" style="visibility: false;" width="255.0" fx:id="xBack">
+         <StackPane.margin>
+            <Insets bottom="370.0" right="290.0" />
+         </StackPane.margin>
+      </Rectangle>
+      <Text fill="#1a05d1" layoutX="320.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" style="visibility: false;" text="Text" textAlignment="CENTER" fx:id="xText">
+         <font>
+            <Font name="Malgun Gothic Bold" size="14.0" />
+         </font>
+         <StackPane.margin>
+            <Insets bottom="335.0" right="290.0" />
+         </StackPane.margin>
+      </Text>
+      <TextField layoutX="60.0" layoutY="70.0" maxHeight="40.0" maxWidth="260.0" minHeight="40.0" minWidth="260.0" prefHeight="40.0" prefWidth="260.0" promptText="X" style="-fx-border-color: #1a05d1; -fx-border-width: 1;" fx:id="x">
+         <StackPane.margin>
+            <Insets bottom="400.0" right="290.0" />
+         </StackPane.margin></TextField>
+      <Rectangle fx:id="yBack" arcHeight="5.0" arcWidth="5.0" fill="#ffffffde" height="70.0" layoutX="62.0" layoutY="170.0" stroke="#ffffff00" strokeType="INSIDE" style="visibility: false;" width="255.0">
+         <StackPane.margin>
+            <Insets bottom="370.0" left="290.0" />
+         </StackPane.margin>
+      </Rectangle>
+      <Text fx:id="yText" fill="#1a05d1" layoutX="176.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" style="visibility: false;" text="Text" textAlignment="CENTER">
+         <font>
+            <Font name="Malgun Gothic Bold" size="14.0" />
+         </font>
+         <StackPane.margin>
+            <Insets bottom="335.0" left="290.0" />
+         </StackPane.margin>
+      </Text>
+      <TextField fx:id="y" layoutX="60.0" layoutY="170.0" maxHeight="40.0" maxWidth="260.0" minHeight="40.0" minWidth="260.0" prefHeight="40.0" prefWidth="260.0" promptText="Y" style="-fx-border-color: #1a05d1; -fx-border-width: 1;">
+         <StackPane.margin>
+            <Insets bottom="400.0" left="290.0" />
+         </StackPane.margin>
+      </TextField>
+      <Rectangle fx:id="genreBack" arcHeight="5.0" arcWidth="5.0" fill="#ffffffde" height="70.0" layoutX="65.0" layoutY="65.0" stroke="#ffffff00" strokeType="INSIDE" style="visibility: false;" width="540.0">
+         <StackPane.margin>
+            <Insets bottom="170.0" />
+         </StackPane.margin>
+      </Rectangle>
+      <Text fx:id="genreText" fill="#1a05d1" layoutX="466.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" style="visibility: false;" text="Text" textAlignment="CENTER">
+         <font>
+            <Font name="Malgun Gothic Bold" size="14.0" />
+         </font>
+         <StackPane.margin>
+            <Insets bottom="135.0" />
+         </StackPane.margin>
+      </Text>
+      <TextField fx:id="genre" layoutX="60.0" layoutY="65.0" maxHeight="40.0" maxWidth="550.0" minHeight="40.0" minWidth="550.0" prefHeight="40.0" prefWidth="550.0" promptText="Genre: rock/progressive rock/post punk/post rock/punk rock" style="-fx-border-color: #1a05d1; -fx-border-width: 1;">
+         <StackPane.margin>
+            <Insets bottom="200.0" />
+         </StackPane.margin>
+      </TextField>
+      <Rectangle fx:id="albumsBack" arcHeight="5.0" arcWidth="5.0" fill="#ffffffde" height="70.0" layoutX="62.0" layoutY="165.0" stroke="#ffffff00" strokeType="INSIDE" style="visibility: false;" width="255.0">
+         <StackPane.margin>
+            <Insets left="290.0" top="40.0" />
+         </StackPane.margin>
+      </Rectangle>
+      <Text fx:id="albumsText" fill="#1a05d1" layoutX="176.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" style="visibility: false;" text="Text" textAlignment="CENTER">
+         <font>
+            <Font name="Malgun Gothic Bold" size="14.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="290.0" top="75.0" />
+         </StackPane.margin>
+      </Text>
+      <TextField fx:id="albums" layoutX="60.0" layoutY="165.0" maxHeight="40.0" maxWidth="260.0" minHeight="40.0" minWidth="260.0" prefHeight="40.0" prefWidth="260.0" promptText="Albums count" style="-fx-border-color: #1a05d1; -fx-border-width: 1;">
+         <StackPane.margin>
+            <Insets left="290.0" top="10.0" />
+         </StackPane.margin>
+      </TextField>
+      <Rectangle fx:id="singlesBack" arcHeight="5.0" arcWidth="5.0" fill="#ffffffde" height="70.0" layoutX="352.0" layoutY="165.0" stroke="#ffffff00" strokeType="INSIDE" style="visibility: false;" width="255.0">
+         <StackPane.margin>
+            <Insets right="290.0" top="40.0" />
+         </StackPane.margin>
+      </Rectangle>
+      <Text fx:id="singlesText" fill="#1a05d1" layoutX="320.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" style="visibility: false;" text="Text" textAlignment="CENTER">
+         <font>
+            <Font name="Malgun Gothic Bold" size="14.0" />
+         </font>
+         <StackPane.margin>
+            <Insets right="290.0" top="75.0" />
+         </StackPane.margin>
+      </Text>
+      <TextField fx:id="singles" layoutX="350.0" layoutY="165.0" maxHeight="40.0" maxWidth="260.0" minHeight="40.0" minWidth="260.0" prefHeight="40.0" prefWidth="260.0" promptText="Singles count" style="-fx-border-color: #1a05d1; -fx-border-width: 1;">
+         <StackPane.margin>
+            <Insets right="290.0" top="10.0" />
+         </StackPane.margin>
+      </TextField>
+      <Rectangle fx:id="albumNameBack" arcHeight="5.0" arcWidth="5.0" fill="#ffffffde" height="70.0" layoutX="65.0" layoutY="265.0" stroke="#ffffff00" strokeType="INSIDE" style="visibility: false;" width="540.0">
+         <StackPane.margin>
+            <Insets top="240.0" />
+         </StackPane.margin>
+      </Rectangle>
+      <Text fx:id="albumNameText" fill="#1a05d1" layoutX="466.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" style="visibility: false;" text="Text" textAlignment="CENTER">
+         <font>
+            <Font name="Malgun Gothic Bold" size="14.0" />
+         </font>
+         <StackPane.margin>
+            <Insets top="275.0" />
+         </StackPane.margin>
+      </Text>
+      <TextField fx:id="albumName" layoutX="60.0" layoutY="265.0" maxHeight="40.0" maxWidth="550.0" minHeight="40.0" minWidth="550.0" prefHeight="40.0" prefWidth="550.0" promptText="Best album name" style="-fx-border-color: #1a05d1; -fx-border-width: 1;" StackPane.alignment="CENTER">
+         <StackPane.margin>
+            <Insets top="210.0" />
+         </StackPane.margin>
+      </TextField>
+      <Rectangle fx:id="salesBack" arcHeight="5.0" arcWidth="5.0" fill="#ffffffde" height="70.0" layoutX="62.0" layoutY="370.0" stroke="#ffffff00" strokeType="INSIDE" style="visibility: false;" width="255.0">
+         <StackPane.margin>
+            <Insets top="440.0" />
+         </StackPane.margin>
+      </Rectangle>
+      <Text fx:id="salesText" fill="#1a05d1" layoutX="320.0" layoutY="553.0" strokeType="OUTSIDE" strokeWidth="0.0" style="visibility: false;" text="Text" textAlignment="CENTER">
+         <font>
+            <Font name="Malgun Gothic Bold" size="14.0" />
+         </font>
+         <StackPane.margin>
+            <Insets top="475.0" />
+         </StackPane.margin>
+      </Text>
+      <TextField fx:id="sales" layoutX="60.0" layoutY="370.0" maxHeight="40.0" maxWidth="260.0" minHeight="40.0" minWidth="260.0" prefHeight="40.0" prefWidth="260.0" promptText="Best albums sales" style="-fx-border-color: #1a05d1; -fx-border-width: 1;">
+         <StackPane.margin>
+            <Insets top="410.0" />
+         </StackPane.margin>
+      </TextField>
+   </children>
+</StackPane>

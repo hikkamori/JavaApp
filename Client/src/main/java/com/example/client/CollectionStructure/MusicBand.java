@@ -17,6 +17,7 @@ public class MusicBand {
     public MusicBand(String name){
         this.id = Long.valueOf((int) (Math.random() * Integer.MAX_VALUE));
         this.creationDate = LocalDate.now();
+        this.name = name;
     }
 
     public Long getId() {
