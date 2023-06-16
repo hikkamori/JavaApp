@@ -11,11 +11,14 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class StartApplication extends Application {
 
     public static int CLIENTPORT = 5007;
-    public static int SERVERPORT = 1257;
+    public static int SERVERPORT = 1256;
+
     public void start(Stage stage) throws IOException {
 
         startWork();
