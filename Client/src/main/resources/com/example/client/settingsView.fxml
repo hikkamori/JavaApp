@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.client.Controllers.settingsController">
    <children>
       <ImageView fitHeight="800.0" fitWidth="1200.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -15,7 +15,7 @@
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffbd" height="1000.0" stroke="WHITE" strokeType="INSIDE" width="1000.0" StackPane.alignment="CENTER" />
-      <Button fx:id="englishButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #ffffff; -fx-border-color: #1a05d1; -fx-border-width: 3;" text="English" textFill="#1a05d1">
+      <Button fx:id="englishButton" mnemonicParsing="false" onAction="#changeEnglish" onMouseEntered="#makeEnglishPink" onMouseExited="#makeEnglishWhite" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #ffffff; -fx-border-color: #1a05d1; -fx-border-width: 3;" text="English" textFill="#1a05d1">
          <font>
             <Font name="Malgun Gothic Bold" size="24.0" />
          </font>
@@ -23,7 +23,7 @@
             <Insets bottom="400.0" />
          </StackPane.margin>
       </Button>
-      <Button fx:id="slovakButton" layoutX="85.0" layoutY="282.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #ffffff; -fx-border-color: #1a05d1; -fx-border-width: 3;" text="Slovak" textFill="#1a05d1">
+      <Button fx:id="slovakButton" layoutX="85.0" layoutY="282.0" mnemonicParsing="false" onAction="#changeSlovak" onMouseEntered="#makeSlovakPink" onMouseExited="#makeSlovakWhite" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #ffffff; -fx-border-color: #1a05d1; -fx-border-width: 3;" text="Slovak" textFill="#1a05d1">
          <font>
             <Font name="Malgun Gothic Bold" size="24.0" />
          </font>
@@ -31,7 +31,7 @@
             <Insets top="400.0" />
          </StackPane.margin>
       </Button>
-      <Button fx:id="albanianButton" layoutX="85.0" layoutY="282.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #ffffff; -fx-border-color: #1a05d1; -fx-border-width: 3;" text="Albanian" textFill="#1a05d1">
+      <Button fx:id="albanianButton" layoutX="85.0" layoutY="282.0" mnemonicParsing="false" onAction="#changeAlbanian" onMouseEntered="#makeAlbanianPink" onMouseExited="#makeAlbanianWhite" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #ffffff; -fx-border-color: #1a05d1; -fx-border-width: 3;" text="Albanian" textFill="#1a05d1">
          <font>
             <Font name="Malgun Gothic Bold" size="24.0" />
          </font>
@@ -39,7 +39,7 @@
             <Insets top="135.0" />
          </StackPane.margin>
       </Button>
-      <Button fx:id="russhianButton" layoutX="85.0" layoutY="282.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #ffffff; -fx-border-color: #1a05d1; -fx-border-width: 3;" text="Russhian" textFill="#1a05d1">
+      <Button fx:id="russhianButton" layoutX="85.0" layoutY="282.0" mnemonicParsing="false" onAction="#changeRusshian" onMouseEntered="#makeRusshianPink" onMouseExited="#makeRusshianWhite" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #ffffff; -fx-border-color: #1a05d1; -fx-border-width: 3;" text="Russhian" textFill="#1a05d1">
          <font>
             <Font name="Malgun Gothic Bold" size="24.0" />
          </font>
