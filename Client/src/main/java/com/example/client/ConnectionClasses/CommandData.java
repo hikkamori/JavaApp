@@ -4,8 +4,10 @@ import com.example.client.CollectionStructure.MusicBand;
 import com.example.client.UserData;
 
 import java.net.InetAddress;
+import java.sql.Statement;
 
 public class CommandData {
+    public static Statement stm;
     public String CommandName;
     public Object[] CommandArgs;
     public MusicBand Band;

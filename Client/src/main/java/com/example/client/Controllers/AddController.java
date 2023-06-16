@@ -4,6 +4,11 @@ import com.example.client.CollectionStructure.Album;
 import com.example.client.CollectionStructure.Coordinates;
 import com.example.client.CollectionStructure.MusicBand;
 import com.example.client.CollectionStructure.MusicGenre;
+import com.example.client.ConnectionClasses.CommandData;
+import com.example.client.ConnectionClasses.DataBaseConnector;
+import com.example.client.ConnectionClasses.Sender;
+import com.example.client.UserData;
+import com.fasterxml.jackson.annotation.JsonEnumDefaultValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -11,6 +16,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -76,7 +86,7 @@ public class AddController {
         confirmButton.setStyle("-fx-background-color: #ffffff; -fx-border-color: #1a05d1; -fx-border-width: 3;");
         panthera.setStyle("visibility: false;");
     }
-    public void addBand(){
+    public void addBand() throws SQLException {
         nameBack.setStyle("visibility: false;");
         nameText.setStyle("visibility: false;");
         xBack.setStyle("visibility: false;");
@@ -232,7 +242,7 @@ public class AddController {
                 salesText.setText("Must be digit");
             }
         }
-        if (FLAG){
+        if (FLAG) {
             MusicBand band = new MusicBand(name.getText());
             Coordinates coordinates = new Coordinates(Double.valueOf(x.getText()), Float.valueOf(y.getText()));
             band.setCoordinates(coordinates);
@@ -242,14 +252,13 @@ public class AddController {
             band.setAlbumsCount(Long.valueOf(albums.getText()));
             band.setNumberOfParticipants(Long.valueOf(Long.valueOf((int) (Math.random() * 20))));
 
-            System.out.println(band.toString());
+            CommandData data = CommandData.createData().Name("add").Username(UserData.getEmail()).Password(UserData.getPassword()).Band(band);
+            try {
+                Sender.send(data);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
         }
-        /*
-        отправка созданного экземпляра на сервер (внутри if'а)
-
-
-
-
-         */
     }
 }

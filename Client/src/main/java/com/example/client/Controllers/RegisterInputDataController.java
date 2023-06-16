@@ -79,9 +79,7 @@ public class RegisterInputDataController {
                     }
                     else{
                         UserData.setPassword(password.getText());
-                        UserData.setEmail(email.getText());
-                        System.out.println(UserData.showMy());
-                        System.out.println(UserData.showOthers());
+                        UserData.setEmail(email.getText());;
                         toManager();
                     }
 

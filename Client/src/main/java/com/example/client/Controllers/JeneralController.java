@@ -119,13 +119,13 @@ public class JeneralController {
         }
         ArrayList<MusicBand> othersCollection = UserData.showOthers();
         if (othersCollection.isEmpty()){
-            Text text = new Text("Others collections is empty(");
+            Text text = new Text("Others collections are empty(");
             downStackPane.getChildren().clear();
             downStackPane.getChildren().add(text);
         } else {
             ArrayList<GridPane> othersSheets = MakeFilledSheets(othersCollection);
-            othersSheets.stream().forEach(x -> x.setStyle("visibility: false;"));
-            othersSheets.get(0).setStyle("visibility: false;");
+            othersSheets.stream().forEach(x -> x.setStyle("visibility: true;"));
+            othersSheets.get(0).setStyle("visibility: true;");
             currentSheetNumOthers = 1;
             downStackPane.getChildren().clear();
             downStackPane.getChildren().addAll(othersSheets);

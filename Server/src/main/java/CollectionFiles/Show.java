@@ -59,7 +59,7 @@ public class Show extends Command {
             } else  {
                 listToAdd = messagesOthers;
             }
-        listToAdd.add(id +", " +name +", " +x +", " +y +", " +date  +", " + numberOfParticipants  +", " + singlesCount +", " +albumsCount +", " +genre +", " +albumSales +", " +albumName);
+        listToAdd.add(id +", " +name +", " +x +", " +y +", " +date  +", " + numberOfParticipants  +", " + singlesCount +", " +albumsCount +", " +genre +", " +albumName +", " +albumSales);
         }
         messages.add("YOUR BANDS");
         messagesMy.stream().forEach(a -> messages.add(a));

@@ -19,7 +19,6 @@ public class MusicBand {
         this.creationDate = LocalDate.now();
         this.name = name;
     }
-
     public Long getId() {
         return id;
     }
