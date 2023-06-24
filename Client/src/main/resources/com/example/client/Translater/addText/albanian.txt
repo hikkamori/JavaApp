@@ -1,0 +1,14 @@
+Name=Emri
+X=X
+Y=Y
+Genre: rock/progressive rock/post punk/post rock/punk rock=Zhanri: rock/rock progresiv/post punk/post rock/punk rock
+Singles count=Numri i këngëve
+Albums count=Albume llogariten
+Best album name=Emri më i mirë i albumit
+Best albums sales=Shitjet më të mira të albumeve
+Please, enter something=Ju lutem, shkruani diçka
+Must be lower than -576=Duhet të jetë më e ulët se -576
+Must be lower than -579=Duhet të jetë më e ulët se -579
+Must be digit=Duhet të jetë shifror
+Genre not found=Zhanër nuk u gjet
+Must be bigger than 0=Duhet të jetë më i madh se 0

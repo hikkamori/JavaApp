@@ -1,0 +1,14 @@
+Name=Имя
+X=X
+Y=Y
+Genre: rock/progressive rock/post punk/post rock/punk rock=Жанр: рок/прогрессивный рок/пост панк/пост рок/панк рок
+Singles count=Количество синглов
+Albums count=Количество альбомов
+Best album name=Имя лучшего альбома
+Best albums sales=Количество продаж лучшего альбома
+Please, enter something=Пожалуйста, введите что-нибудь
+Must be lower than -576=Должно быть меньше чем -576
+Must be lower than -579=Должно быть меньше чем -579
+Must be digit=Должно быть числом
+Genre not found=Жанр не найден
+Must be bigger than 0=Должно быть больше 0

@@ -1,0 +1,22 @@
+ID=ID
+Name=Имя
+Genre=Жанр
+Singles=Синглы
+Albums=Альбомы
+Your bands=Ваши группы
+Other's bands=Чужие группы
+Add band=Добавить
+Settings=Настройки
+Update=Обновить
+ID: =ID:
+Name: =Имя:
+Genre: =Жанр:
+Creation date: =Дата создания:
+Coordinates: =Координаты:
+Members count: =Участники:
+Singles count: =Количество синглов:
+Albums count: =Количество альбомов:
+Best album: =Лучший альбом:
+Best album sales: =Продажи альбма:
+
+

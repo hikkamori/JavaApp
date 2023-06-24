@@ -1,0 +1,14 @@
+Name=Meno
+X=X
+Y=Y
+Genre: rock/progressive rock/post punk/post rock/punk rock=Žáner: Rock/Progresívny rock/post punk/post rock/punk rock
+Singles count=Počet jednotlivcov
+Albums count=Počet albumov
+Best album name=Názov najlepšieho albumu
+Best albums sales=Predaj najlepších albumov
+Please, enter something=Prosím, zadajte niečo
+Must be lower than -576=Musí byť nižšia ako -576
+Must be lower than -579=Musí byť nižšia ako -579
+Must be digit=Musí byť číslica
+Genre not found=Žáner nebol nájdený
+Must be bigger than 0=Musí byť väčší ako 0

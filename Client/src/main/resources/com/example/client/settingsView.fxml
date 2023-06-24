@@ -39,7 +39,7 @@
             <Insets top="135.0" />
          </StackPane.margin>
       </Button>
-      <Button fx:id="russhianButton" layoutX="85.0" layoutY="282.0" mnemonicParsing="false" onAction="#changeRusshian" onMouseEntered="#makeRusshianPink" onMouseExited="#makeRusshianWhite" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #ffffff; -fx-border-color: #1a05d1; -fx-border-width: 3;" text="Russian" textFill="#1a05d1">
+      <Button fx:id="russianButton" layoutX="85.0" layoutY="282.0" mnemonicParsing="false" onAction="#changeRussian" onMouseEntered="#makeRusshianPink" onMouseExited="#makeRusshianWhite" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #ffffff; -fx-border-color: #1a05d1; -fx-border-width: 3;" text="Russian" textFill="#1a05d1">
          <font>
             <Font name="Malgun Gothic Bold" size="24.0" />
          </font>

@@ -9,6 +9,7 @@ import com.example.client.ConnectionClasses.Reciever;
 import com.example.client.ConnectionClasses.Sender;
 import javafx.stage.Stage;
 
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
@@ -17,14 +18,32 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
 import java.util.*;
+import java.util.stream.Stream;
 
 public class UserData {
+    public static MusicBand currentElement;
+    public static boolean elementIsYours;
     private static int attempts = 0;
     private static Stage stage;
+    public static Stage settingsStage;
+
+    public static void setTmpStage(Stage tmpStage) {
+        UserData.tmpStage = tmpStage;
+    }
+
+    private static Stage tmpStage;
+
+    public static Stage getTmpStage() {
+        return tmpStage;
+    }
+
     private static Boolean isAuthorizing;
     private static String email;
     private static String password;
     private static DatagramSocket soc;
+    public static String currentLanguage = "english";
+    public static ArrayList<MusicBand> myCollection;
+    public static ArrayList<MusicBand> othersCollection;
 
     public static ArrayList<MusicBand> showMy() throws NoSuchAlgorithmException, IOException {
         String userinfo = "show";
@@ -34,68 +53,97 @@ public class UserData {
         String codedPassword = String.format("%040x", new BigInteger(1, digest.digest()));
         CommandData data = CommandData.createData().Name(userinfo).Username(UserData.getEmail()).Password(codedPassword);
         Sender.send(data);
-        String[] messages = Reciever.getData(UserData.getSoc());
-        ArrayList<String> mylist = new ArrayList<>(List.of(Arrays.toString(messages).split(", ")));
+        ArrayList<String> messages = new ArrayList<>(List.of(Reciever.getData(UserData.getSoc())));
         ArrayList<MusicBand> res = new ArrayList<>();
 
-        for(int j = 2; j < mylist.indexOf("OTHER BANDS"); j=j+11){
-                    MusicBand tmp = new MusicBand();
-                    tmp.setId(Long.parseLong(mylist.get(j)));
-                    tmp.setName(mylist.get(j + 1));
-                    tmp.setCoordinates(new Coordinates(Double.valueOf(mylist.get(j + 2)), Float.parseFloat(mylist.get(j + 3))));
-                    tmp.setCreationDate(LocalDate.parse(mylist.get(j + 4)));
-                    tmp.setNumberOfParticipants(Long.valueOf(mylist.get(j + 5)));
-                    tmp.setSinglesCount(Long.parseLong(mylist.get(j + 6)));
-                    tmp.setAlbumsCount(Long.valueOf(mylist.get(j + 7)));
-                    tmp.setGenre(MusicGenre.valueOf(mylist.get(j + 8).toUpperCase(Locale.ROOT)));
-                    Album tmpal = new Album();
-                    tmpal.setName(mylist.get(j + 9));
-                    tmpal.setSales(Float.parseFloat(mylist.get(j + 10)));
-                    tmp.setBestAlbum(tmpal);
-
-                    res.add(tmp);
+        for(int j = 1; j < messages.indexOf("OTHERS BANDS"); j++){
+            ArrayList<String> info = new ArrayList<>(List.of(messages.get(j).split(", ")));
+            MusicBand band = new MusicBand();
+            band.setId(Long.valueOf(Integer.valueOf(info.get(0))));
+            band.setName(info.get(1));
+            band.setCoordinates(new Coordinates(Double.valueOf(info.get(2)), Float.valueOf(info.get(3))));
+            band.setCreationDate(LocalDate.parse(info.get(4)));
+            band.setNumberOfParticipants(Long.valueOf(info.get(5)));
+            band.setSinglesCount(Long.valueOf(info.get(6)));
+            band.setAlbumsCount(Long.valueOf(info.get(7)));
+            band.setGenre(MusicGenre.getGenreName(info.get(8).toLowerCase()));
+            Album album = new Album();
+            album.setName(info.get(9));
+            album.setSales(Float.valueOf(info.get(10)));
+            band.setBestAlbum(album);
+            res.add(band);
 
         }
-
-
+        myCollection = res;
         return res;
     }
     public static ArrayList<MusicBand> showOthers() throws NoSuchAlgorithmException, IOException {
         String userinfo = "show";
-        ArrayList<MusicBand> mybands = new ArrayList<>();
         MessageDigest digest = MessageDigest.getInstance("SHA-1");
         digest.reset();
         digest.update(UserData.getPassword().getBytes("utf8"));
         String codedPassword = String.format("%040x", new BigInteger(1, digest.digest()));
         CommandData data = CommandData.createData().Name(userinfo).Username(UserData.getEmail()).Password(codedPassword);
         Sender.send(data);
-        String[] messages = Reciever.getData(UserData.getSoc());
-        ArrayList<String> mylist = new ArrayList<>(List.of(Arrays.toString(messages).split(", ")));
+        ArrayList<String> messages = new ArrayList<>(List.of(Reciever.getData(UserData.getSoc())));
         ArrayList<MusicBand> res = new ArrayList<>();
-        mylist.add(mylist.get(mylist.size()-1).substring(0,mylist.get(mylist.size()-1).length() - 1));
-        mylist.remove(mylist.size() - 2);
-        System.out.println(mylist);
-        for(int j = mylist.indexOf("OTHERS BANDS") + 1; j < mylist.size(); j=j+11){
-            MusicBand tmp = new MusicBand();
-            tmp.setId(Long.parseLong(mylist.get(j)));
-            tmp.setName(mylist.get(j + 1));
-            tmp.setCoordinates(new Coordinates(Double.valueOf(mylist.get(j + 2)), Float.parseFloat(mylist.get(j + 3))));
-            tmp.setCreationDate(LocalDate.parse(mylist.get(j + 4)));
-            tmp.setNumberOfParticipants(Long.valueOf(mylist.get(j + 5)));
-            tmp.setSinglesCount(Long.parseLong(mylist.get(j + 6)));
-            tmp.setAlbumsCount(Long.valueOf(mylist.get(j + 7)));
-            tmp.setGenre(MusicGenre.valueOf(mylist.get(j + 8).toUpperCase(Locale.ROOT)));
-            Album tmpal = new Album();
-            tmpal.setName(mylist.get(j + 9));
-            tmpal.setSales(Float.parseFloat(mylist.get(j + 10)));
-            tmp.setBestAlbum(tmpal);
-
-            res.add(tmp);
+        System.out.println(Integer.valueOf(messages.indexOf("OTHERS BANDS")));
+        for(int j = messages.indexOf("OTHERS BANDS")+1; j < messages.size(); j++){
+            ArrayList<String> info = new ArrayList<>(List.of(messages.get(j).split(", ")));
+            MusicBand band = new MusicBand();
+            band.setId(Long.valueOf(Integer.valueOf(info.get(0))));
+            band.setName(info.get(1));
+            band.setCoordinates(new Coordinates(Double.valueOf(info.get(2)), Float.valueOf(info.get(3))));
+            band.setCreationDate(LocalDate.parse(info.get(4)));
+            band.setNumberOfParticipants(Long.valueOf(info.get(5)));
+            band.setSinglesCount(Long.valueOf(info.get(6)));
+            band.setAlbumsCount(Long.valueOf(info.get(7)));
+            band.setGenre(MusicGenre.getGenreName(info.get(8).toLowerCase()));
+            Album album = new Album();
+            album.setName(info.get(9));
+            album.setSales(Float.valueOf(info.get(10)));
+            band.setBestAlbum(album);
+            res.add(band);
 
         }
-
-
+        othersCollection = res;
         return res;
+    }
+    public static String translate(String s, String filename, boolean order){
+        try(FileReader reader = new FileReader(filename))
+        {
+            char[] buf = new char[1024];
+            int c;
+            while((c = reader.read(buf))>0){
+
+                if(c < 1024){
+                    buf = Arrays.copyOf(buf, c);
+                }
+            }
+            String res = null;
+            ArrayList<String> pare = new ArrayList<>(List.of(String.valueOf(buf).split("\n")));
+            for (int i = 0; i < pare.size(); i++){
+                String word;
+                String translation;
+                if (order){
+                    word = pare.get(i).split("=")[0];
+                    translation = pare.get(i).split("=")[1];
+                    translation = translation.substring(0, translation.length()-1);
+                } else {
+                    word = pare.get(i).split("=")[1];
+                    word = word.substring(0, word.length()-1);
+                    translation = pare.get(i).split("=")[0];
+                }
+                if (s.equals(word)){
+                    res = translation;
+                    break;
+                }
+            }
+            return res;
+        }
+        catch(IOException ex){
+        }
+        return null;
     }
 
     public static void setAttempts(int attempts) {

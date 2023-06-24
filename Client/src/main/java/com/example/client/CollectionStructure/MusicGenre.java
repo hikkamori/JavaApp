@@ -42,4 +42,13 @@ public enum MusicGenre {
         genres.put("punk rock", MusicGenre.PUNK_ROCK);
         return genres.get(name);
     }
+    public static MusicGenre getById(String name){
+        HashMap<String, MusicGenre> genres = new HashMap<>();
+        genres.put("1", MusicGenre.ROCK);
+        genres.put("2", MusicGenre.PROGRESSIVE_ROCK);
+        genres.put("3", MusicGenre.POST_PUNK);
+        genres.put("4", MusicGenre.POST_ROCK);
+        genres.put("5", MusicGenre.PUNK_ROCK);
+        return genres.get(name);
+    }
 }

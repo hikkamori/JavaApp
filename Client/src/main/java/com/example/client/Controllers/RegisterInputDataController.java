@@ -69,15 +69,16 @@ public class RegisterInputDataController {
                     CommandData data = CommandData.createData().Name(userinfo).Username(email.getText()).Password(codedPassword);
                     Sender.send(data);
                     String[] messages = Reciever.getData(UserData.getSoc());
-                    System.out.println(Arrays.toString(messages));
+                    //System.out.println(Arrays.toString(messages));
                     showInvalidCredsText(messages[0], errorText);
                     if(messages[0].contains("invalid")){
                         UserData.setAttempts(UserData.getAttempts() + 1);
                         if(UserData.getAttempts() == 3){
                             showBan(bunImg);
                         }
-                    }
-                    else{
+                    } else if (messages[0].equals("error")) {
+                        
+                    } else{
                         UserData.setPassword(password.getText());
                         UserData.setEmail(email.getText());;
                         toManager();
@@ -92,7 +93,7 @@ public class RegisterInputDataController {
 
     @FXML
     protected void toManager() {
-        UserData.getStage().setTitle("Collection Managing by Vozzh and sorokka");
+        UserData.getStage().setTitle("Collection Managing");
         UserData.getStage().setScene(scene);
         UserData.getStage().show();
     }
@@ -128,7 +129,7 @@ public class RegisterInputDataController {
     }
 
     public void showInvalidCredsText(String serverAns, Text errorText){
-        if(Objects.equals(serverAns, "error")){
+        if(serverAns.equals("error")){
             errorText.setText("You already have a profile! Use logging in.");
             errorText.setStyle("visibility: true;");
         }

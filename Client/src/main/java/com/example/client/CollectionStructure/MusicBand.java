@@ -1,6 +1,7 @@
 package com.example.client.CollectionStructure;
 
 import java.time.LocalDate;
+import java.util.Comparator;
 
 public class MusicBand {
     private Long id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
@@ -105,5 +106,32 @@ public class MusicBand {
 
     }
 
+    public static final Comparator<MusicBand> compareById = new Comparator<MusicBand>() {
+        @Override
+        public int compare(MusicBand first, MusicBand second) {
+            return (int) (first.getId() -second.getId());
+        }
+    };public static final Comparator<MusicBand> compareByName = new Comparator<MusicBand>() {
+        @Override
+        public int compare(MusicBand first, MusicBand second) {
+            return (int) (first.getName().length() -second.getName().length());
+        }
+    };public static final Comparator<MusicBand> compareByGenre = new Comparator<MusicBand>() {
+        @Override
+        public int compare(MusicBand first, MusicBand second) {
+            return (int) (first.getGenre().toString().length() -second.getGenre().toString().length());
+        }
+    };public static final Comparator<MusicBand> compareBySingles = new Comparator<MusicBand>() {
+        @Override
+        public int compare(MusicBand first, MusicBand second) {
+            return (int) (first.getSinglesCount() -second.getSinglesCount());
+        }
+    };
+    public static final Comparator<MusicBand> compareByAlbums = new Comparator<MusicBand>() {
+        @Override
+        public int compare(MusicBand first, MusicBand second) {
+            return (int) (first.getAlbumsCount() -second.getAlbumsCount());
+        }
+    };
 
 }

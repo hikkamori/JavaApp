@@ -1,0 +1,5 @@
+rock=рок
+progressive rock=прогрессивный рок
+post punk=пост панк
+post rock=пост рок
+punk rock=панк рок

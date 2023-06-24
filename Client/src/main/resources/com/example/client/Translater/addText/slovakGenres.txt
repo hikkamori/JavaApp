@@ -1,0 +1,5 @@
+rock=Rock
+progressive rock=Progresívny rock
+post punk=post punk
+post rock=post rock
+punk rock=punk rock

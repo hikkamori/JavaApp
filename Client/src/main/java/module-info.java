@@ -13,5 +13,6 @@ module com.example.client {
     exports com.example.client;
     exports com.example.client.Controllers;
     exports com.example.client.ConnectionClasses;
+    exports com.example.client.CollectionStructure;
     opens com.example.client.Controllers to javafx.fxml;
 }

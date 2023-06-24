@@ -43,7 +43,7 @@ public class Add extends Command {
         }
         ArrayList messages = new ArrayList();
 
-        messages.add("The item has been added to the collection. To see what the collection looks like, write 'show'");
+        //messages.add("The item has been added to the collection. To see what the collection looks like, write 'show'");
         return messages;
 
     }
